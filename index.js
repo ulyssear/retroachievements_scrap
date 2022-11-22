@@ -26,7 +26,10 @@ const path = require('path');
           }
           const name = await entry.evaluate((node) => {
             let {innerText} = node;
-            // par
+            innerText = innerText.replace(/[^a-zA-Z0-9 ]/g, '')
+              .replace(/\s\s+/g, ' ')
+              .trim();
+            return innerText;
           });
           const url = await entry.evaluate((node) => node.querySelector('a')?.href);
 
