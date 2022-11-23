@@ -2,18 +2,18 @@
   "name": "retroachievements-scrap",
   "version": "1.0.0",
   "description": "",
+  "author": "",
+  "private": "true",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js --headless --executablePath=\"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"",
+    "start": "npm run build && node index.js --headless --executablePath=\"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "rome format --write --trailing-comma es5 --indent-style space --indent-size 2 --line-width 160 --quote-style single index.js",
     "lint": "rome check index.js",
     "lint:fix": "rome check --apply-suggested index.js",
     "build": "npm run format && npm run lint:fix"
   },
-  "private": "true",
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@ulyssear/bootstrap-scraping": "^0.2.3",
     "rome": "^10.0.1"
