@@ -10,10 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: get-npm-version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@main
-
       - uses: actions/setup-node@v3
         with:
           node-version: 16
