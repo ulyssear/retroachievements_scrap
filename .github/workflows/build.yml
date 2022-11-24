@@ -1,0 +1,35 @@
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm run build
+
+      # - run: git config advice.addIgnoredFile false
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_options: '--no-verify'
+          commit_user_name: github-actions
+          commit_user_email: noreply@arnaud.tech
+          commit_author: github-actions <noreply@arnaud.tech>
+          commit_message: "Updated index.js"
+          skip_dirty_check: true
+          push_options: '--force'
+          branch: main
+          file_pattern: ./index.js
