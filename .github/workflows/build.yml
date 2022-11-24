@@ -27,5 +27,5 @@ jobs:
           commit_message: "Updated index.js"
           skip_dirty_check: true
           push_options: '--force'
-          branch: main
+          branch: master
           file_pattern: ./index.js
