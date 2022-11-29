@@ -6,7 +6,7 @@
   "private": "true",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node index.js --headless --executablePath=\"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"",
+    "start": "node index.js --headless",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "rome format --write --trailing-comma es5 --indent-style space --indent-size 2 --line-width 160 --quote-style single index.js",
     "lint": "rome check index.js",
